@@ -1,0 +1,6 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "25beed5e2e935ebc00d7e3eed1dc502df3c40e39" },
+  "leap.nvim": { "branch": "main", "commit": "bae0433949ba54eb1df629f6e94b33af5922922f" },
+  "nvim-spider": { "branch": "main", "commit": "a9658b58cd219e3fbfa6d2c5ab04b255bc6a1f6c" },
+  "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
+}
