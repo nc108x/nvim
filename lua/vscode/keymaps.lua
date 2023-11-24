@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -33,7 +33,6 @@ keymap("v", ">", ">gv", opts)
 
 keymap("v", "<A-k>", ":m .+1<cr>==", opts)
 keymap("v", "<A-j>", ":m .-2<cr>==", opts)
-keymap("v", "p", '"_dP', opts)
 
 keymap("x", "J", ":move '>+1<cr>gv-gv", opts)
 keymap("x", "K", ":move '<-2<cr>gv-gv", opts)
@@ -43,4 +42,4 @@ keymap("x", "<A-k>", ":move '<-2<cr>gv-gv", opts)
 -- LSP
 keymap("n", "gD", "<Cmd>call VSCodeNotify('editor.action.revealDeclaration')<cr>", opts)
 keymap("n", "gd", "<Cmd>call VSCodeNotify('editor.action.revealDefinition')<cr>", opts)
-keymap("n", "gk", "<Cmd>call VSCodeNotify('editor.action.showHover')<cr>", opts)
+keymap("n", "gi", "<Cmd>call VSCodeNotify('editor.action.showHover')<cr>", opts)

@@ -1,10 +1,24 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
+local tb = require("telescope.builtin")
 
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+function vim.getVisualSelection()
+  vim.cmd('noau normal! "vy"')
+  local text = vim.fn.getreg("v")
+  vim.fn.setreg("v", {})
+
+  text = string.gsub(text, "\n", "")
+  if #text > 0 then
+    return text
+  else
+    return ""
+  end
+end
 
 -- Modes
 --   normal_mode = "n",
@@ -40,20 +54,20 @@ keymap("n", "<leader>q", ":q<cr>", opts)
 keymap("n", "<leader>x", ":q!<cr>", opts)
 
 -- Telescope
-keymap("n", "<leader>f", ":Telescope find_files<cr>", opts)
-keymap("n", "<leader>g", ":Telescope live_grep<cr>", opts)
+keymap("n", "<C-p>", ":Telescope find_files<cr>", opts)
+keymap("n", "<C-f>", ":Telescope live_grep<cr>", opts)
 
 -- Misc
 keymap("n", "<leader>d", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>e", ":TroubleToggle<cr>", opts)
 keymap("n", "<leader>;", ":lua vim.lsp.buf.format()<cr>", opts)
 keymap("n", "<leader>nh", ":nohlsearch<cr>", opts)
-keymap("n", "<c-Enter>", ":ToggleTerm", opts)
-
+keymap("n", "<C-Enter>", ":ToggleTerm", opts)
 
 -- Insert --
--- jk
+-- Escape
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
 
 -- Navigate within insert mode
 keymap("i", "<A-h>", "<Left>", opts)
@@ -69,7 +83,14 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<A-k>", ":m .+1<CR>==", opts)
 keymap("v", "<A-j>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+keymap("v", "p", "P", opts)
+keymap("v", "P", "p", opts)
+
+-- Telescope
+keymap('v', "<C-f>", function()
+  local text = vim.getVisualSelection()
+  tb.live_grep({ default_text = text })
+end, opts)
 
 -- Visual Block --
 -- Move text up and down

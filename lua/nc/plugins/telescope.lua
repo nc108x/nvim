@@ -18,6 +18,7 @@ return {
             ["<Up>"] = actions.move_selection_previous,
             ["<C-j>"] = actions.move_selection_next,
             ["<C-k>"] = actions.move_selection_previous,
+            ["<C-u>"] = false,
           },
         },
       },
