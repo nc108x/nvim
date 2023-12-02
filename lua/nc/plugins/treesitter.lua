@@ -48,7 +48,5 @@ return {
         enable_autocmd = false,
       },
     })
-  end
-
+  end,
 }
-

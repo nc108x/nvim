@@ -88,7 +88,7 @@ keymap("v", "p", "P", opts)
 keymap("v", "P", "p", opts)
 
 -- Telescope
-keymap('v', "<C-f>", function()
+keymap("v", "<C-f>", function()
   local text = vim.getVisualSelection()
   tb.live_grep({ default_text = text })
 end, opts)

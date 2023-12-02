@@ -1,7 +1,7 @@
 return {
   {
     "tpope/vim-fugitive",
-    cmd = { "Git", "G" }
+    cmd = { "Git", "G" },
   },
 
   {
@@ -9,7 +9,6 @@ return {
     event = "VeryLazy",
     opts = {},
   },
-
 
   {
     "echasnovski/mini.indentscope",
@@ -82,8 +81,7 @@ return {
   {
     {
       "folke/zen-mode.nvim",
-      opts = {
-      }
-    }
-  }
+      opts = {},
+    },
+  },
 }
