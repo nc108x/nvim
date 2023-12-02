@@ -25,7 +25,6 @@ keymap("n", "X", "<Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<c
 
 keymap("n", "<leader>w", ":Write<cr>", opts)
 keymap("n", "<leader>nh", ":nohlsearch<cr>", opts)
--- keymap("n", "<C-l>", "<Cmd>call VSCodeNotify('editor.action.showFind')<cr>", opts)
 
 -- move text
 keymap("v", "<", "<gv", opts)
@@ -43,3 +42,9 @@ keymap("x", "<A-k>", ":move '<-2<cr>gv-gv", opts)
 keymap("n", "gD", "<Cmd>call VSCodeNotify('editor.action.revealDeclaration')<cr>", opts)
 keymap("n", "gd", "<Cmd>call VSCodeNotify('editor.action.revealDefinition')<cr>", opts)
 keymap("n", "gi", "<Cmd>call VSCodeNotify('editor.action.showHover')<cr>", opts)
+
+-- Spider --
+keymap({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>")
+keymap({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>")
+keymap({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
+keymap({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>")

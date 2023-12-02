@@ -62,7 +62,8 @@ keymap("n", "<leader>d", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>e", ":TroubleToggle<cr>", opts)
 keymap("n", "<leader>;", ":lua vim.lsp.buf.format()<cr>", opts)
 keymap("n", "<leader>nh", ":nohlsearch<cr>", opts)
-keymap("n", "<C-Enter>", ":ToggleTerm", opts)
+keymap("n", "<C-Enter>", ":ToggleTerm<cr>", opts)
+keymap("n", "<leader>zm", ":ZenMode<cr>", opts)
 
 -- Insert --
 -- Escape
@@ -105,3 +106,9 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Spider --
+keymap({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>")
+keymap({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>")
+keymap({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
+keymap({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>")
