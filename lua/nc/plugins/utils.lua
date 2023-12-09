@@ -11,6 +11,13 @@ return {
   },
 
   {
+    "windwp/nvim-ts-autotag",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {},
+  },
+
+  {
     "echasnovski/mini.indentscope",
     version = false,
     event = { "BufReadPre", "BufNewFile" },
@@ -78,10 +85,9 @@ return {
       }
     end,
   },
+
   {
-    {
-      "folke/zen-mode.nvim",
-      opts = {},
-    },
+    "folke/zen-mode.nvim",
+    opts = {},
   },
 }
