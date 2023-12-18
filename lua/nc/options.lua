@@ -10,6 +10,7 @@ v.scrolloff = 8
 v.splitright = true
 v.splitbelow = true
 v.confirm = true
+v.showmode = false
 
 v.termguicolors = true
 v.pumheight = 10
@@ -18,7 +19,7 @@ v.number = true
 v.relativenumber = true
 v.numberwidth = 4
 v.cursorline = true
-vim.opt.laststatus = 3
+v.laststatus = 3
 
 v.expandtab = true
 v.shiftwidth = 4

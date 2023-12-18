@@ -1,6 +1,7 @@
 return {
   "Civitasv/cmake-tools.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
+  lazy = true,
   config = {
     cmake_command = "cmake", -- this is used to specify cmake command path
     cmake_regenerate_on_save = true, -- auto generate when save CMakeLists.txt

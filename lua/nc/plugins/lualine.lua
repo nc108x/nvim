@@ -1,7 +1,10 @@
 return {
   {
     "nvim-lualine/lualine.nvim",
-    dependencies = { { "catppuccin/nvim", name = "catppuccin" } },
+    dependencies = {
+      { "catppuccin/nvim", name = "catppuccin" },
+      { "Civitasv/cmake-tools.nvim" },
+    },
     event = "VeryLazy",
 
     opts = function()

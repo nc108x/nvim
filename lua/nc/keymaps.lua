@@ -58,12 +58,12 @@ keymap("n", "<C-p>", ":Telescope find_files<cr>", opts)
 keymap("n", "<C-f>", ":Telescope live_grep<cr>", opts)
 
 -- Misc
-keymap("n", "<leader>d", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>e", ":TroubleToggle<cr>", opts)
-keymap("n", "<leader>;", ":lua vim.lsp.buf.format()<cr>", opts)
+keymap("n", "<leader>d", ":NvimTreeOpen<cr>", opts)
+keymap("n", "<leader>e", ":Trouble<cr>", opts)
 keymap("n", "<leader>nh", ":nohlsearch<cr>", opts)
 keymap("n", "<C-Enter>", ":ToggleTerm<cr>", opts)
 keymap("n", "<leader>zm", ":ZenMode<cr>", opts)
+keymap("n", "<leader>to", ":TodoTrouble<cr>", opts)
 
 -- Insert --
 -- Escape
